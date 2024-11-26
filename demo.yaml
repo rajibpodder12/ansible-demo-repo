@@ -1,0 +1,17 @@
+- hosts: all
+
+  vars:
+
+    my_file: /tmp/test.html
+
+  tasks:
+
+    - fail:
+        msg: "[ERROR] {{ my_file }} does not exist."
+      when: my_file is not exists
+      delegate_to: localhost
+      run_once: true
+
+    - debug:
+        msg: Continue play.
+      run_once: true
