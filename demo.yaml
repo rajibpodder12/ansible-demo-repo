@@ -6,12 +6,6 @@
 
   tasks:
 
-    - fail:
-        msg: "[ERROR] {{ my_file }} does not exist."
-      when: my_file is not exists
-      delegate_to: localhost
-      run_once: true
-
     - debug:
-        msg: Continue play.
+        msg: Welcome to ansible tower demo.
       run_once: true
