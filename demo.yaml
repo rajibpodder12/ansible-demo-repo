@@ -9,3 +9,4 @@
     - debug:
         msg: Welcome to ansible tower demo.
       run_once: true
+    - setup:
