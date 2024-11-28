@@ -19,3 +19,9 @@
     loop_control:
       loop_var: group
     become: yes
+ - name: download prometheus software
+   get_url:
+     url: https://github.com/prometheus/prometheus/releases/download/v3.0.0/prometheus-3.0.0.linux-arm64.tar.gz
+     dest: /root/prometheus-3.0.0.linux-arm64.tar.gz
+     mode: '0777'
+     
