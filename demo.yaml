@@ -1,12 +1,6 @@
 - hosts: all
-
-  vars:
-
-    my_file: /tmp/test.html
-
+  gather_facts: true
   tasks:
-
-    - debug:
-        msg: Welcome to ansible tower demo.
+  - debug:
+      msg: Welcome to ansible tower demo from {{ ansible_hostname }}.
       run_once: true
-    - setup:
