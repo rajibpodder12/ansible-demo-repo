@@ -3,4 +3,4 @@
   tasks:
   - name: welcome message from the connecting vms
     debug:
-      msg: Welcome to ansible tower demo from {{ ansible_hostname }}.
+      msg: Welcome to ansible tower demo from {{ ansible_default_ipv4.address }}.
