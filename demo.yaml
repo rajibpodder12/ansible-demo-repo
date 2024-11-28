@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: vms
   gather_facts: true
   tasks:
   - name: welcome message from the connecting vms
