@@ -4,3 +4,18 @@
   - name: welcome message from the connecting vms
     debug:
       msg: Welcome to ansible tower demo from {{ ansible_default_ipv4.address }}.
+  - name: creating other groups required for oracle,ingres db client and datastage installation
+    group:
+      name: "{{ group.name }}"
+      gid: "{{ group.gid }}"
+      state: present
+    loop:
+      - { name: oinstall , gid: 2230 }
+      - { name: inginstall, gid: 2231 }
+      - { name: dstage, gid: 2232 }
+      - { name: db2iadm1, gid: 2233 }
+      - { name: dba, gid: 2234 }
+      - { name: oper, gid: 2235 }
+    loop_control:
+      loop_var: group
+    become: yes
