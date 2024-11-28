@@ -1,6 +1,7 @@
 - hosts: all
   gather_facts: true
   tasks:
-  - debug:
+  - name: welcome message from the connecting vms
+    debug:
       msg: Welcome to ansible tower demo from {{ ansible_hostname }}.
-      run_once: true
+    run_once: true
